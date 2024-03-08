@@ -1,0 +1,54 @@
+USEFUL GIT COMMANDS: https://git-scm.com/docs, https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories ...
+
+	Can clone someone else repo to start with cc 2nd link:
+	'$' just means in command line you don't actually type that yourself
+
+$ git init -b main --> initializes an empty repo with the inital branch called 'main' --> if you see .gitattributes, .gitignore, .git you know local directory has been initalized as a local repo.
+	--> $ git branch nameOfBranch --> creates side branch
+	--> $ git branch --list --> lists all branches in current repo *USEFUL IF YOU CANT FIND WORKTREE*
+
+$ git pull origin yourBranch --> checks out branch you're working on and updates it... DO THIS FIRST BEFORE YOU GIT ADD
+
+
+$ git add --> Add changes (can be multiple files at once) you want to include in the next push to the "staging area" (staging area: The staging area is a file, generally contained in your .git directory, that stores information about what will go into your next commit). ADD CHANGES BEFORE YOU MAKE COMMIT! ADD CHANGES BEFORE YOU MAKE COMMIT! ADD CHANGES BEFORE YOU MAKE COMMIT!
+
+	--> can edit with
+		 $ git add --update 
+      or         $ git add -u
+	Both are semantically the same can use either/or to where: git will update or remove previously tracked files from entire working tree. 
+
+	--> $ git add -A ... same as previous command but also adds new files ontop of updating tree.
+	
+	--> $ git --staged to go back to previous stage with no loss
+
+$ git commit -m "yourMessage"--> records change to local repo... 
+
+	--> From git-scm.com - 'Create a new commit containing the current contents of the index and the given log message describing the changes. The new commit is a direct child of HEAD, usually the tip of the current branch, and the branch is updated to point to it' https://git-scm.com/docs/git-commit. 
+
+$ git status --> Tells you which areas have/have not been staged = what is being added/removed. Green means add, red means remove.
+
+
+$ git push --> Uploads code to the online repo you specified. 
+
+		--> If working with new branch... *MUST PUSH LOCAL BRANCH TO REMOTE BEFORE using '$ git push' .... The remote is just lingo for online repo.
+			*****that is you must do $ git push -u origin yourBranchName 
+			In our case we are updating out remote named "origin". Once you do this you can just 'git push' from branch to repo.
+
+
+
+USEFUL Windows Commands:
+
+$ cd "C:/Your/Directory/Path" --> Changes directory to path you specified ... IS HOW TO DO IN POWERSHELL NOT GITBASH cc below for gitbash format
+
+		if there's a space in one of the file names you must enclose the entire path in double bunny ears
+ " " or () ... if referencing multiple paths with whitespace chars then can "cmd /c .... "C:/Your/PrimaryDirectory/Path" ... "D:/Your/SecondaryDirectory/Path""
+
+$ pwd --> print working directories 
+
+$ find ~ -type d –name .git --> Lists all local repos located in your current directory (searches subfolders) --> useful for finding path if multiple repos exist.
+
+	--> in our case it would print  ... therefore can copy and paste into gitbash and cd /c/Users/Robert/NN/NN1/testNN/
+ to get to our repo
+
+$ ls -a yourGitPathFromFindPreviousCommand --> Lists ALL files in that given directory including hidden (in this case to find our hidden git files).
+
