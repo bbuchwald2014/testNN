@@ -1,13 +1,27 @@
-USEFUL GIT COMMANDS: https://git-scm.com/docs, https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories ...
+SEFUL GIT COMMANDS: https://git-scm.com/docs, https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories ...
 
 	Can clone someone else repo to start with cc 2nd link:
 	'$' just means in command line you don't actually type that yourself
+
+
 
 $ git init -b main --> initializes an empty repo with the inital branch called 'main' --> if you see .gitattributes, .gitignore, .git you know local directory has been initalized as a local repo.
 	--> $ git branch nameOfBranch --> creates side branch
 	--> $ git branch --list --> lists all branches in current repo *USEFUL IF YOU CANT FIND WORKTREE*
 
-$ git pull origin yourBranch --> checks out branch you're working on and updates it... DO THIS FIRST BEFORE YOU GIT ADD
+
+
+$ git pull origin yourBranch --> checks out branch you're working on and updates it... DO THIS FIRST BEFORE YOU GIT ADD... 
+	Is technically a combination of $ git fetch , and $ git merge ... 
+	--> $ git branch yourBranchName --> Makes new branch of yourBranchName.
+	--> $ git branch --> Shows list of branches stemming from your branch including current stem.
+
+
+
+$ git checkout yourBranch --> Updates file(s) in working tree to match specified version ... If no parameters passed then will update HEAD (current location) 
+to specified branch as current 
+	--> $ git checkout -->with no argument seems to be just glorified $ git status
+
 
 
 $ git add --> Add changes (can be multiple files at once) you want to include in the next push to the "staging area" (staging area: The staging area is a file, generally contained in your .git directory, that stores information about what will go into your next commit). ADD CHANGES BEFORE YOU MAKE COMMIT! ADD CHANGES BEFORE YOU MAKE COMMIT! ADD CHANGES BEFORE YOU MAKE COMMIT!
@@ -20,6 +34,8 @@ $ git add --> Add changes (can be multiple files at once) you want to include in
 	--> $ git add -A ... same as previous command but also adds new files ontop of updating tree.
 	
 	--> $ git --staged to go back to previous stage with no loss
+
+
 
 $ git commit -m "yourMessage"--> records change to local repo... 
 
@@ -36,19 +52,38 @@ $ git push --> Uploads code to the online repo you specified.
 
 
 
+$touch .gitignore --> create gitignore file in local repo 
+		-->$ git rm --cached yourFileName --> to remove file from tracker... must do if you want to ignore it. 
+
+
+
 USEFUL Windows Commands:
+
+
+
 
 $ cd "C:/Your/Directory/Path" --> Changes directory to path you specified ... IS HOW TO DO IN POWERSHELL NOT GITBASH cc below for gitbash format
 
 		if there's a space in one of the file names you must enclose the entire path in double bunny ears
  " " or () ... if referencing multiple paths with whitespace chars then can "cmd /c .... "C:/Your/PrimaryDirectory/Path" ... "D:/Your/SecondaryDirectory/Path""
 
+
+
+
 $ pwd --> print working directories 
+
+
+
 
 $ find ~ -type d –name .git --> Lists all local repos located in your current directory (searches subfolders) --> useful for finding path if multiple repos exist.
 
-	--> in our case it would print  ... therefore can copy and paste into gitbash and cd /c/Users/Robert/NN/NN1/testNN/
+	--> in our case it would print  ... therefore can copy and paste into gitbash and $ cd /c/Users/Robert/NN/NN1/testNN/
  to get to our repo
 
+
+
+
 $ ls -a yourGitPathFromFindPreviousCommand --> Lists ALL files in that given directory including hidden (in this case to find our hidden git files).
+
+
 
